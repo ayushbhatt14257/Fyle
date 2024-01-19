@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories Viewer</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <h1>GitHub Repositories Viewer</h1>
+    </header>
+    <main class="main">
+        <div class="form">
+            <label for="username">GitHub Username:</label>
+            <input type="text" id="username" placeholder="Enter GitHub username">
+        </div>
+
+        <div class="form">
+            <label for="search">Search Repo:</label>
+            <input type="text" id="search" placeholder="Search by repository name" oninput="filterRepositories()">
+
+        </div>
+        <div class="form">
+            <label for="perPage">Repo Per Page:</label>
+            <select id="perPage" onchange="updatePerPage()">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+
+        <button onclick="fetchRepositories()">Search</button>
+    </main>
+
+    <div id="userInfo">
+        <!-- Display user information here -->
+
+        <div id="infoleft">
+
+        </div>
+        <div id="inforight">
+
+        </div>
+    </div>
+
+
+
+    <div class="pagination">
+        <button onclick="prevPage()" id="prevButton" disabled>Prev</button>
+        <button onclick="nextPage()" id="nextButton" disabled>Next</button>
+    </div>
+
+
+    <div class="card-container">
+        <!-- <div class="card">
+            
+        </div> -->
+    </div>
+    <div id="loader" class="loader"></div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
